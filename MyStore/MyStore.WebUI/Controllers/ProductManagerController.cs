@@ -12,15 +12,15 @@ namespace MyStore.WebUI.Controllers
     public class ProductManagerController : Controller
     {
         //create an instance of the Product Repository
-        ProductRepository context;
-        ProductCategoryRepository productCategories;
+        InMemoryRepository<Product> context;
+        InMemoryRepository<ProductCategory> productCategories;
 
        
 
         //crteate an instance of the Productmanagercontroller which isitiates that Product Repository
         public ProductManagerController() {
-            context = new ProductRepository();
-            productCategories = new ProductCategoryRepository();
+            context = new InMemoryRepository<Product>();
+            productCategories = new InMemoryRepository<ProductCategory>();
 
         }
 
